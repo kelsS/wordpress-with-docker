@@ -30,7 +30,7 @@ Local Wordpress development with Docker.
     - Run docker commands from Project root
         - [Docker Compose documentation](https://docs.docker.com/compose/)
 8) run <code>docker-compose up -d</code>
-9) Open <code>localhost</code> in browser
+9) Open <code>localhost:8080</code> in browser
 10) Follow the Worpress Install Instructions
 11) When stopping the containers you can:
     1) run <code>docker container stop</code>
@@ -39,5 +39,13 @@ Local Wordpress development with Docker.
         or
     2) run <code>docker-compose down</code>
         - This stops the container from running and destroys it.
+
+# Database Management
+1) To export the database from the database container"
+    ```sh
+    cd .. # to project root
+    ./export.sh
+    ```
+    - This adds an export of the sql database to the <code>wp-data</code> folder
     
 
