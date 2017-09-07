@@ -3,6 +3,8 @@ node_modules
 bower_components
 vpmdev.sh
 wp-data
+wp-app/*
+!wp-app/wp-content/
 
 # Compiled
 # dist
