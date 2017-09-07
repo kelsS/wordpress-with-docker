@@ -7,7 +7,7 @@ Local Wordpress development with Docker.
     - [Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
         - Follow Docker for Windows [configure instructions](https://docs.docker.com/docker-for-windows/#explore-the-application-and-run-examples)
     - [Docker for Mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
-        - Follow Docker for Max [configure instructions](https://docs.docker.com/docker-for-mac/)
+        - Follow Docker for Mac [configure instructions](https://docs.docker.com/docker-for-mac/)
 2) Change the name of this repo to project name.
 3) Remove .git folder
 4) Init a new Git repo
