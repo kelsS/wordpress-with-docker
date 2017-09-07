@@ -1,0 +1,33 @@
+version: '2'
+services:
+  wordpress:
+    image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    ports:
+      - 8080:80 # change ip if required, 127.0.0.1 on Windows
+    volumes:
+      - ./wp-app:/var/www/html # Full wordpress project
+      #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
+      #- ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name # Theme development
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: project-name-wordpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: Vi$ion2017
+    depends_on:
+      - db
+    networks:
+      - wordpress-network
+  db:
+    image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    ports:
+      - 3306:3306 # change ip if required
+    volumes:
+      - ./wp-data:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: project-name-db
+      MYSQL_ROOT_PASSWORD: Vi$ion2017
+    networks:
+      - wordpress-network
+networks:
+  wordpress-network:
+      driver: bridge
